@@ -1,0 +1,39 @@
+.selection-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 4rem;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.selection-item:hover {
+  background: white;
+  color: black;
+  opacity: 25%;
+  transform: scale(1.05, 1.1);
+}
+
+.highlight-select-item {
+  background: var(--white);
+  color: var(--black);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 950px) {
+  .technology-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .selection-item {
+    width: 4rem;
+    height: 4rem;
+  }
+}

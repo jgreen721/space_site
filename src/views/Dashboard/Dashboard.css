@@ -1,0 +1,168 @@
+.dashboard-container {
+  background-image: url("./assets/home/background-home-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-top: 18rem;
+}
+
+.dashboard-top-header-inline-div {
+  overflow: hidden;
+}
+
+.dashboard-top-header-inline-div h5 {
+  display: inline-block;
+  --delay: 0s;
+}
+
+.dashboard-top-header {
+  letter-spacing: 0.5rem;
+}
+
+.dashboard-header {
+  font-weight: 400;
+  /*font spacing solution to align text */
+  transform: translateX(-1rem);
+  --delay: 1s;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3),
+    1px 1px 5px rgba(255, 255, 255, 0.5), 1px 1px 15px rgba(255, 255, 255, 0.75);
+}
+
+.dashboard-blurb {
+  margin-right: 7rem;
+  --delay: 1.5s;
+}
+
+.explore-div {
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  height: 27rem;
+  width: 27rem;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.explore-div h4 {
+  position: relative;
+  z-index: 25;
+}
+
+.explore-div:hover {
+  animation: growshadow 3s infinite;
+}
+
+.explore-div:hover::after {
+  content: "";
+  position: absolute;
+  left: -13%;
+  top: -13%;
+  width: 125%;
+  height: 125%;
+  background: white;
+  border-radius: 50%;
+  transition: 0.5s ease;
+  opacity: 25%;
+  transform: scale(0);
+  animation: growbubble 3s infinite;
+}
+
+.explore-div:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -37.5%;
+  top: -37.5%;
+  width: 175%;
+  height: 175%;
+  background: white;
+  border-radius: 50%;
+  transition: 0.5s ease;
+  opacity: 25%;
+  transform: scale(0);
+  animation: growbubble 2s infinite;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.explore-div:hover .overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -27.5%;
+  top: -27.5%;
+  width: 155%;
+  height: 155%;
+  background: white;
+  border-radius: 50%;
+  transition: 0.5s ease;
+  opacity: 25%;
+  transform: scale(0);
+  z-index: 1;
+  animation: growbubble 2.45s infinite;
+}
+
+@keyframes growshadow {
+  0% {
+    box-shadow: 0px;
+  }
+  25% {
+    box-shadow: 0px 0px 20px white, 0px 0px 120px white;
+  }
+  00% {
+    box-shadow: 0px 0px 20px white, 0px 0px 120px white, 0px 0px 220px white;
+  }
+  75% {
+    box-shadow: 0px 0px 20px white, 0px 0px 120px white;
+  }
+  100% {
+    box-shadow: 0px;
+  }
+}
+
+@keyframes growbubble {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .dashboard-container {
+    background-image: url("./assets/home/background-home-tablet.jpg");
+    align-items: center;
+    /* padding: 0rem 2rem; */
+  }
+
+  .dashboard-blurb {
+    margin: 0rem 3rem;
+  }
+
+  .dashboard-header {
+    transform: translateX(0);
+  }
+
+  .explore-div {
+    height: 15rem;
+    width: 15rem;
+    letter-spacing: 0.2rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .dashboard-container {
+    background-image: url("./assets/home/background-home-mobile.jpg");
+  }
+}

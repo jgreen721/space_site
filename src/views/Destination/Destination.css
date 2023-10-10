@@ -1,0 +1,132 @@
+.destination-container {
+  background-image: url("./assets/destination/background-destination-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 24rem;
+  padding-bottom: 8rem;
+  display: flex;
+}
+
+.destination-img-div {
+  /* perspective: 5px; */
+  margin-top: 10rem;
+}
+
+.destination-img {
+  transition: 1s ease-out;
+  opacity: 1;
+  animation: rotateplanet 15s infinite;
+}
+
+.destination-content-card {
+  /*prevent collision on resizing */
+  /* margin-left: 5rem; */
+  text-shadow: 1px 1px 1px black, 1px 1px 8px black, 1px 1px 28px black,
+    1px 1px 10px white;
+  overflow: hidden;
+}
+
+.destination-blurb {
+  text-shadow: none;
+}
+
+@keyframes rotateplanet {
+  0% {
+    transform: translateY(0rem);
+  }
+  20% {
+    transform: translateY(3rem) translateZ(-1px);
+  }
+  40% {
+    transform: translateY(-1rem);
+  }
+  60% {
+    transform: translateY(2rem) translateZ(1px);
+  }
+  80% {
+    transform: translateY(-3rem) translateZ(-0.5px);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+.destination-header {
+  font-size: 10rem;
+  animation: clearblur 1s forwards;
+  text-transform: uppercase;
+  font-weight: 200;
+  filter: blur(5px);
+}
+
+@keyframes clearblur {
+  100% {
+    filter: blur(0px);
+  }
+}
+
+/* .slide-header {
+  text-transform: uppercase;
+  font-weight: 200;
+  transform: translateY(-100rem);
+  transition: 1s ease;
+  font-size: 10rem;
+} */
+
+.stats-list {
+  display: flex;
+
+  width: fit-content;
+  gap: 5rem;
+  /* border: 2px solid red; */
+}
+
+@media screen and (max-width: 950px) {
+  .destination-container {
+    background-image: url("./assets/destination/background-destination-tablet.jpg");
+    align-items: center;
+    padding: 18rem var(--mainPaddingX);
+    /*padding bottom set to correct y-distance with no fixed element to guard from */
+    padding-bottom: 6rem;
+  }
+  .destination-header {
+    font-size: 8rem;
+  }
+
+  .destination-img-div {
+    height: 30rem;
+    width: 30rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+  }
+  .destination-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* .destination-content-card {
+    margin-left: 0rem;
+  } */
+
+  .stats-list {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 415px) {
+  .destination-container {
+    background-image: url("./assets/destination/background-destination-mobile.jpg");
+    padding: 10.5rem 0rem;
+    /* border: 2px solid red; */
+  }
+  .destination-header {
+    font-size: 5.6rem;
+  }
+  .destination-img-div {
+    height: 17rem;
+    width: 17rem;
+  }
+  .stats-list {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}

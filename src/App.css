@@ -1,0 +1,10 @@
+.app {
+  max-width: 144rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  border: 2px solid black;
+  overflow: hidden;
+  width: 100%;
+  color: var(--white);
+  position: relative;
+}

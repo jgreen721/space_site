@@ -1,0 +1,103 @@
+.technology-container {
+  background-image: url("./assets/technology/background-technology-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 18rem;
+  padding-bottom: 10rem;
+}
+
+.technology-content-container {
+  margin-top: 10rem;
+  gap: 5rem;
+  padding-right: 0rem;
+  padding-left: var(--mainPaddingX);
+  display: flex;
+}
+
+.tablet-img-container {
+  display: none;
+}
+
+.technology-content-card {
+  padding-top: 15rem;
+  display: flex;
+  gap: 5rem;
+}
+
+.technology-blurb {
+  line-height: 3rem;
+  font-size: 1.8rem;
+  margin-right: 5rem;
+}
+
+.technology-desktop-img-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* transition: 0.5s ease; */
+  overflow: hidden;
+}
+
+.technology-desktop-img-div img {
+  transition: 0.5s ease;
+}
+
+.technology-desktop-img-div:hover img {
+  filter: hue-rotate(90deg);
+  /* transform: scale(1.05); */
+}
+
+.technology-img {
+  box-shadow: -4px 0px 10px rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width: 950px) {
+  .technology-container {
+    background-image: url("./assets/technology/background-technology-tablet.jpg");
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+  }
+
+  .technology-content-container {
+    margin-top: 5rem;
+    padding-left: 0;
+  }
+
+  .technology-content-column {
+    width: 100%;
+    /* border: 3px solid green; */
+  }
+
+  .technology-title-div {
+    padding: 0 var(--mainPaddingX);
+  }
+
+  .technology-content-card {
+    flex-direction: column;
+    padding-top: 0rem;
+  }
+
+  .technology-desktop-img-div {
+    display: none;
+  }
+
+  .tablet-img-container {
+    display: block;
+    margin: 4rem 0;
+  }
+
+  .tablet-img {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .technology-blurb {
+    margin-right: 0rem;
+    margin: 0 5rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .technology-container {
+    background-image: url("./assets/technology/background-technology-mobile.jpg");
+  }
+}
