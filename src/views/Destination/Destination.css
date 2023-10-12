@@ -1,5 +1,5 @@
 .destination-container {
-  background-image: url("./assets/destination/background-destination-desktop.jpg");
+  background-image: url("/assets/destination/background-destination-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 24rem;
@@ -83,7 +83,7 @@
 
 @media screen and (max-width: 950px) {
   .destination-container {
-    background-image: url("./assets/destination/background-destination-tablet.jpg");
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
     align-items: center;
     padding: 18rem var(--mainPaddingX);
     /*padding bottom set to correct y-distance with no fixed element to guard from */
@@ -114,7 +114,7 @@
 }
 @media screen and (max-width: 415px) {
   .destination-container {
-    background-image: url("./assets/destination/background-destination-mobile.jpg");
+    background-image: url("/assets/destination/background-destination-mobile.jpg");
     padding: 10.5rem 0rem;
     /* border: 2px solid red; */
   }

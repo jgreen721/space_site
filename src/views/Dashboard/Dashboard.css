@@ -1,5 +1,5 @@
 .dashboard-container {
-  background-image: url("./assets/home/background-home-desktop.jpg");
+  background-image: url("/assets/home/background-home-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -142,7 +142,7 @@
 
 @media screen and (max-width: 950px) {
   .dashboard-container {
-    background-image: url("./assets/home/background-home-tablet.jpg");
+    background-image: url("/assets/home/background-home-tablet.jpg");
     align-items: center;
     /* padding: 0rem 2rem; */
   }
@@ -163,6 +163,6 @@
 }
 @media screen and (max-width: 375px) {
   .dashboard-container {
-    background-image: url("./assets/home/background-home-mobile.jpg");
+    background-image: url("/assets/home/background-home-mobile.jpg");
   }
 }
