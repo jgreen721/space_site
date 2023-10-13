@@ -28,38 +28,12 @@
   animation: riseonscreen 1s forwards;
 }
 
-/* @keyframes riseonscreen {
-  50% {
-    transform: translateY(0);
-    text-shadow: 1px 1px 15px white;
-  }
-  100% {
-    transform: translateY(0);
-    text-shadow: 1px 1px 1px white;
-  }
-} */
-
 .slide-tablet-tech-img-offscreen-up {
   transform: translate(0rem);
   width: 100%;
   min-height: 300px;
   animation: riseoffscreen 1s forwards;
 }
-
-/* .riseonscreen {
-  transform: translateY(100vh);
-  animation: riseonscreen 1s forwards;
-}
-
-.riseoffscreen {
-  animation: riseoffscreen 1s forwards;
-}
-
-@keyframes riseoffscreen {
-  100% {
-    transform: translateY(-100rem);
-  }
-} */
 
 .technology-content-card {
   padding-top: 15rem;
@@ -95,17 +69,8 @@
   line-height: 3rem;
   font-size: 1.8rem;
   margin-right: 5rem;
-  /* opacity: 0;
-  filter: blur(10px); */
   animation: cleartext 2s forwards;
 }
-
-/* @keyframes cleartext {
-  100% {
-    filter: blur(0px);
-    opacity: 1;
-  }
-} */
 
 .fadeblur-description {
   line-height: 3rem;
@@ -113,16 +78,6 @@
   margin-right: 5rem;
   animation: fadeblur 3s forwards;
 }
-
-/* @keyframes fadeblur {
-  50% {
-    filter: blur(10px);
-  }
-  100% {
-    filter: blur(0px);
-    opacity: 0;
-  }
-} */
 
 .technology-desktop-img-div {
   display: flex;
@@ -133,22 +88,6 @@
 
 .technology-desktop-img-div:hover img {
   filter: hue-rotate(90deg);
-}
-
-.technology-desktop-img {
-  transform: translateX(-100vw);
-  animation: sliderightonscreen 1s forwards;
-}
-
-.slide-img-right-offscreen {
-  transform: translateX(0);
-  animation: slide-img-right-offscreen 1s forwards;
-}
-
-@keyframes slide-img-right-offscreen {
-  100% {
-    transform: translateX(100vw);
-  }
 }
 
 @media screen and (max-width: 950px) {

@@ -212,7 +212,7 @@ p {
   }
 }
 
-.raise-character {
+/* .raise-character-onscreen {
   transform: translateY(100vw);
   animation: slideup 1s var(--delay) forwards;
 }
@@ -224,7 +224,7 @@ p {
   100% {
     transform: translateY(0);
   }
-}
+} */
 
 .fade-out {
   transition: 1s ease-in;

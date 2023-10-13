@@ -13,17 +13,18 @@ const Technology = ({technology}) => {
 
 
   const handleChangeCounter=(val)=>{
+    if(titleRef.current.classList.contains("technology-header-shrink"))return;
 
     titleRef.current.className = "technology-header-shrink thin uppercase"
     tabletImg.current.className = "slide-tablet-tech-img-offscreen-up"
-    desktopImg.current.className = "slide-img-right-offscreen"
-    descriptionRef.current.className = "thin barlow fadeblur-description"
+    desktopImg.current.className = "sliderightoffscreen"
+    descriptionRef.current.className = "thin barlow technology-description fadeblur-description"
 
     setTimeout(()=>{
     setCounter(val)
     titleRef.current.className = "technology-header thin uppercase"
     tabletImg.current.className = "technology-tablet-img"
-    desktopImg.current.className = "technology-desktop-img"
+    desktopImg.current.className = "technology-desktop-img sliderightonscreen"
     descriptionRef.current.className = "thin barlow technology-description clear-text"
 
 
