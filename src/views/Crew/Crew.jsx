@@ -13,7 +13,7 @@ const Crew = ({crew}) => {
 
 
   const handleChangeCrew = (val)=>{
-    imgRef.current.className = "fadeblur"
+    imgRef.current.className = "crew-img fadeblur"
     mobileImgRef.current.className = "mobile-crew-img riseoffscreen"
     descriptionRef.current.className = "crew-content-blurb-div pinch-shut"
     nameRef.current.className = "thin bellafair destination-blurb uppercase sliderightoffscreen"
