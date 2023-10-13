@@ -8,19 +8,25 @@ const Technology = ({technology}) => {
   const tabletImg = useRef();
   const desktopImg = useRef();
   const titleRef = useRef();
+  const descriptionRef = useRef();
   console.log("Technology",technology)
 
 
   const handleChangeCounter=(val)=>{
 
-    titleRef.current.classList.add("fade-out")
-    tabletImg.current.classList.add("slide-el-up")
-    // desktopImg.current.classList.add("fade-out")
+    titleRef.current.className = "technology-header-shrink thin uppercase"
+    tabletImg.current.className = "slide-tablet-tech-img-offscreen-up"
+    desktopImg.current.className = "slide-img-right-offscreen"
+    descriptionRef.current.className = "thin barlow fadeblur-description"
 
     setTimeout(()=>{
     setCounter(val)
-    titleRef.current.classList.remove("fade-out")
-    tabletImg.current.classList.remove("slide-el-up")
+    titleRef.current.className = "technology-header thin uppercase"
+    tabletImg.current.className = "technology-tablet-img"
+    desktopImg.current.className = "technology-desktop-img"
+    descriptionRef.current.className = "thin barlow technology-description clear-text"
+
+
 
     },1500)
   }
@@ -34,7 +40,7 @@ const Technology = ({technology}) => {
             <FormatHeader thinClassname="text-white" strongClassname="text-white muted" number="03" title="Space Launch 10"/>   
           </div>
           <div className="tablet-img-container">
-            <img ref={tabletImg} className="tablet-img" src={technology[counter].images.landscape} alt="" />
+            <img ref={tabletImg} className="technology-tablet-img" src={technology[counter].images.landscape} alt="" />
           </div>
        
 
@@ -47,17 +53,19 @@ const Technology = ({technology}) => {
                  <div className="technology-card-column">
                       <div className="technology-content-name-div">
                         <p className="uppercase thin l-spacing semi-muted">The Terminology...</p>
+                        <div className="technology-header-div">
                         <h3 ref={titleRef} className="technology-header uppercase thin">{technology[counter].name}</h3>
+                        </div>
                       </div> 
-                      <div className="technology-content-descriptione-div my-3">
-                        <p className="thin barlow technology-blurb">{technology[counter].description}</p>
+                      <div className="technology-description-div my-3">
+                        <p ref={descriptionRef} className="thin barlow technology-description clear-text">{technology[counter].description}</p>
                       </div> 
                  </div>    
                </div>
           </div>
         <div className="content-column technology-content-column technology-desktop-img-div">
             {/* <div className="technology-deskto"> */}
-              <img ref={desktopImg} className="technology-img" src={technology[counter].images.portrait} alt="" />
+              <img ref={desktopImg} className="technology-desktop-img" src={technology[counter].images.portrait} alt="" />
             {/* </div> */}
       </div>
     </div>

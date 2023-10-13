@@ -16,7 +16,50 @@
 
 .tablet-img-container {
   display: none;
+  margin: 4rem 0;
+  overflow: hidden;
 }
+
+.technology-tablet-img {
+  width: 100%;
+  min-height: 300px;
+  transform: translateY(100rem);
+  transition: 0.5s ease;
+  animation: riseonscreen 1s forwards;
+}
+
+/* @keyframes riseonscreen {
+  50% {
+    transform: translateY(0);
+    text-shadow: 1px 1px 15px white;
+  }
+  100% {
+    transform: translateY(0);
+    text-shadow: 1px 1px 1px white;
+  }
+} */
+
+.slide-tablet-tech-img-offscreen-up {
+  transform: translate(0rem);
+  width: 100%;
+  min-height: 300px;
+  animation: riseoffscreen 1s forwards;
+}
+
+/* .riseonscreen {
+  transform: translateY(100vh);
+  animation: riseonscreen 1s forwards;
+}
+
+.riseoffscreen {
+  animation: riseoffscreen 1s forwards;
+}
+
+@keyframes riseoffscreen {
+  100% {
+    transform: translateY(-100rem);
+  }
+} */
 
 .technology-content-card {
   padding-top: 15rem;
@@ -24,31 +67,88 @@
   gap: 5rem;
 }
 
-.technology-blurb {
+.technology-header-div {
+  overflow: hidden;
+}
+
+.technology-header {
+  transform: translateY(50rem);
+  animation: riseonscreen 1.5s forwards;
+}
+
+.technology-header-shrink {
+  animation: shrinkheader 1s forwards;
+}
+
+@keyframes shrinkheader {
+  100% {
+    transform: scale(0);
+  }
+}
+
+.technology-description-div {
+  /* prevent screen jumps on changes */
+  height: 135px;
+}
+
+.technology-description {
   line-height: 3rem;
   font-size: 1.8rem;
   margin-right: 5rem;
+  /* opacity: 0;
+  filter: blur(10px); */
+  animation: cleartext 2s forwards;
 }
+
+/* @keyframes cleartext {
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+} */
+
+.fadeblur-description {
+  line-height: 3rem;
+  font-size: 1.8rem;
+  margin-right: 5rem;
+  animation: fadeblur 3s forwards;
+}
+
+/* @keyframes fadeblur {
+  50% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 0;
+  }
+} */
 
 .technology-desktop-img-div {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* transition: 0.5s ease; */
   overflow: hidden;
-}
-
-.technology-desktop-img-div img {
-  transition: 0.5s ease;
 }
 
 .technology-desktop-img-div:hover img {
   filter: hue-rotate(90deg);
-  /* transform: scale(1.05); */
 }
 
-.technology-img {
-  box-shadow: -4px 0px 10px rgba(255, 255, 255, 0.4);
+.technology-desktop-img {
+  transform: translateX(-100vw);
+  animation: sliderightonscreen 1s forwards;
+}
+
+.slide-img-right-offscreen {
+  transform: translateX(0);
+  animation: slide-img-right-offscreen 1s forwards;
+}
+
+@keyframes slide-img-right-offscreen {
+  100% {
+    transform: translateX(100vw);
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -63,9 +163,9 @@
     padding-left: 0;
   }
 
-  .technology-content-column {
-    width: 100%;
-    /* border: 3px solid green; */
+  .technology-header-div {
+    width: fit-content;
+    margin: 0 auto;
   }
 
   .technology-title-div {
@@ -83,19 +183,14 @@
 
   .tablet-img-container {
     display: block;
-    margin: 4rem 0;
   }
 
-  .tablet-img {
-    width: 100%;
-    min-height: 300px;
-  }
-
-  .technology-blurb {
+  .technology-description {
     margin-right: 0rem;
     margin: 0 5rem;
   }
 }
+
 @media screen and (max-width: 375px) {
   .technology-container {
     background-image: url("/assets/technology/background-technology-mobile.jpg");

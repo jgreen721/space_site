@@ -183,6 +183,35 @@ p {
   }
 }
 
+.slide-el-right {
+  transform: translateX(0vw);
+  animation: sliderightonscreen 1s forwards;
+}
+
+.sliderightonscreen {
+  transform: translateX(-100rem);
+  animation: sliderightonscreen 1s forwards;
+}
+
+@keyframes sliderightonscreen {
+  50% {
+    transform: translateX(2rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.sliderightoffscreen {
+  animation: sliderightoffscreen 1s forwards;
+}
+
+@keyframes sliderightoffscreen {
+  100% {
+    transform: translateX(100rem);
+  }
+}
+
 .raise-character {
   transform: translateY(100vw);
   animation: slideup 1s var(--delay) forwards;
@@ -202,17 +231,113 @@ p {
   opacity: 0;
 }
 
-.slide-el-up {
-  /* text-transform: uppercase;
-  font-weight: 200; */
-  transform: translateY(-100rem);
-  transition: 1s ease;
-  /* font-size: 10rem; */
-}
-
 .drop-el {
   transform: translateY(100vh);
   transition: 1s ease;
+}
+
+.riseonscreen {
+  transform: translateY(100vh);
+  animation: riseonscreen 1s forwards;
+}
+
+@keyframes riseonscreen {
+  50% {
+    transform: translateY(0);
+    /*add 'flash' for header, doesn't impact img */
+    text-shadow: 1px 1px 15px white;
+  }
+  100% {
+    transform: translateY(0);
+    text-shadow: 1px 1px 1px white;
+  }
+}
+
+.riseoffscreen {
+  animation: riseoffscreen 1s forwards;
+}
+
+@keyframes riseoffscreen {
+  100% {
+    transform: translateY(-100rem);
+  }
+}
+
+.clear-text {
+  opacity: 0;
+  filter: blur(10px);
+  animation: cleartext 2s forwards;
+}
+
+@keyframes cleartext {
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.fadeblur {
+  animation: fadeblur 3s forwards;
+}
+
+@keyframes fadeblur {
+  50% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 0;
+  }
+}
+
+.pinch-shut {
+  overflow: hidden;
+  animation: pinchshut 1s forwards;
+  transform-origin: center;
+  /* height: 150px; */
+}
+
+@keyframes pinchshut {
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+.open-wide {
+  animation: open-wide 1s forwards;
+  transform-origin: center;
+  transform: scaleY(0);
+}
+
+@keyframes open-wide {
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.pinch-x-shut {
+  overflow: hidden;
+  animation: pinch-x-shut 0.5s forwards;
+  transform-origin: center;
+  /* height: 150px; */
+}
+
+@keyframes pinch-x-shut {
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.open-x-wide {
+  animation: open-x-wide 0.5s forwards;
+  transform-origin: center;
+  transform: scaleX(0);
+}
+
+@keyframes open-x-wide {
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 @media screen and (max-width: 950px) {

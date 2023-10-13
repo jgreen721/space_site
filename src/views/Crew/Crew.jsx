@@ -7,18 +7,33 @@ const Crew = ({crew}) => {
   const [counter,setCounter] = useState(0)
   const imgRef = useRef();
   const mobileImgRef = useRef();
+  const descriptionRef = useRef();
+  const titleRef = useRef();
+  const nameRef = useRef()
 
 
   const handleChangeCrew = (val)=>{
-    imgRef.current.classList.add("drop-el")
-    mobileImgRef.current.classList.add("drop-el")
+    imgRef.current.className = "fadeblur"
+    mobileImgRef.current.className = "mobile-crew-img riseoffscreen"
+    descriptionRef.current.className = "crew-content-blurb-div pinch-shut"
+    nameRef.current.className = "thin bellafair destination-blurb uppercase sliderightoffscreen"
+    titleRef.current.className = "crew-content-role-div pinch-x-shut"
     // tabletImg.current.classList.add("slide-el-up")
     // desktopImg.current.classList.add("fade-out")
 
     setTimeout(()=>{
     setCounter(val)
-    mobileImgRef.current.classList.remove("drop-el")
-    imgRef.current.classList.remove("drop-el")
+    // mobileImgRef.current.classList.remove("drop-el")
+    // imgRef.current.classList.remove("drop-el")
+    imgRef.current.className = "crew-img clear-text"
+    mobileImgRef.current.className = "mobile-crew-img riseonscreen"
+    descriptionRef.current.className = "crew-content-blurb-div open-wide"
+    nameRef.current.className = "thin bellafair destination-blurb uppercase sliderightonscreen"
+    titleRef.current.className = "crew-content-role-div open-x-wide"
+
+
+
+
     // tabletImg.current.classList.remove("slide-el-up")
 
     },1500)
@@ -43,13 +58,13 @@ const Crew = ({crew}) => {
 
                <div className="crew-content-card">
             {/* <Selector handleChangeDestination={handleChangeDestination} destinations={planets.map((p,idx)=>({id:idx+1,counter:idx,name:p.name}))} setCounter={setCounter}/> */}
-            <div className="crew-content-role-div">
+            <div ref={titleRef} className="crew-content-role-div">
             <h4 className="crew-header uppercase thin">{crew[counter].role}</h4>
             </div> 
             <div className="crew-content-name-div">
-            <h3 className="thin bellafair destination-blurb uppercase">{crew[counter].name}</h3>
+            <h3 ref={nameRef} className="thin bellafair destination-blurb uppercase">{crew[counter].name}</h3>
             </div> 
-            <div className="crew-content-blurb-div">
+            <div ref={descriptionRef} className="crew-content-blurb-div">
             <p className="bellafair blurb-height">{crew[counter].bio}</p>
             </div>
             <div className="desktop-selector">
